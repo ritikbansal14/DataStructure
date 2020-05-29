@@ -1,4 +1,4 @@
-public class TreeNode{
+public class TreeNode {
     int data;
     TreeNode leftNode;
     TreeNode rightNode;
@@ -44,4 +44,32 @@ public class TreeNode{
         }
     }
 
+    public void preOrderTraversal() {
+        System.out.print(this.data + " ");
+        if (leftNode != null) {
+            leftNode.preOrderTraversal();
+        }
+        if (rightNode != null) {
+            rightNode.preOrderTraversal();
+        }
+    }
+
+    public void postOrderTraversal() {
+        if (leftNode != null) {
+            leftNode.postOrderTraversal();
+        }
+        if (rightNode != null) {
+            rightNode.postOrderTraversal();
+        }
+        System.out.print(this.data + " ");
+    }
+
+    public TreeNode getMin() {
+        if (leftNode == null && rightNode == null) {
+            return this;
+        } else if (leftNode != null) {
+            return leftNode.getMin();
+        }
+        return rightNode.getMin();
+    }
 }

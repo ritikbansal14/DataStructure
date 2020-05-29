@@ -8,6 +8,9 @@ public class Tree {
           rootNode.insert(2);
           rootNode.insert(6);
           rootNode.insert(7);
+          System.out.println("Inorder Traversal");
+          rootNode.inOrderTraverse();
+          System.out.println("Minimum is "+rootNode.getMin().data);
           rootNode.inOrderTraverse();
           sc.close();
     } 
